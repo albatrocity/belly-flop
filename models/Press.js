@@ -26,5 +26,5 @@ Press.add({
 /**
  * Registration
  */
-Press.defaultColumns = 'name, bands, releaseDate'
+Press.defaultColumns = 'name, bands, releases, publishedAt'
 Press.register()
