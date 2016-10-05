@@ -16,7 +16,7 @@ Contact.add({
   address: { type: Types.Location, initial:true },
   organization: {
     type: Types.Relationship, ref: 'Organization', many: true,
-    label: `Venue/Record Store`, initial: true
+    label: `Associated Places`, initial: true
   },
   notes: { type: Types.Textarea, initial: true },
   type: { type: Types.Select, options: [

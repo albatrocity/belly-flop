@@ -17,7 +17,6 @@ Organization.add({
   info: { type: Types.Textarea, initial: true },
   notes: { type: Types.Textarea, initial: true},
   location: { type: Types.Location, initial: true },
-  contacts: { type: Types.Relationship, ref: 'Contact', many: true },
   active: { type: Types.Boolean, default: true }
 })
 

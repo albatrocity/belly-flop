@@ -11,9 +11,7 @@ const Publication = new keystone.List('Publication', {
   hidden: false
 })
 
-Publication.add({
-  info: { type: Types.Textarea, initial: true, note: `other bands, etc.` }
-})
+// Publication.add({})
 
 /**
  * Registration
