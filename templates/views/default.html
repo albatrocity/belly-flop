@@ -50,17 +50,10 @@
 						<a class="navbar-brand" href="/">Belly Flop</a>
 					</div>
 					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{% for link in navLinks %}
-								<li class="{{ 'active' if link.key == section else '' }}">
-									<a href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-							{% endfor %}
-						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							{% if user %}
 								{% if user.canAccessKeystone %}
-								<li><a href="/keystone">Open Keystone</a></li>
+								<li><a href="/keystone">Open Admin</a></li>
 								{% endif %}
 								<li><a href="/keystone/signout">Sign Out</a></li>
 							{% else %}
@@ -90,31 +83,8 @@
 		</div>
 
 
-		{# FOOTER #}
-		<div id="footer" class="container">
-			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
-			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-		</div>
-
-
 		{# JAVASCRIPT #}
 
-		{# jQuery 1.11.3 is included by default, and required by both Bootstrap
-			and the KeystoneJS Content Editor. If you are not targeting IE8,
-			you can upgrade to 2.1.4 (also bundled) for better performance. #}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-
-		{# Customise which Bootstrap javascript files are served by including
-			them specifically here, instead of bootstrap-3.3.5.min.js #}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-
-		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
-			which generate links to edit content for users who can access Keystone #}
-		{% if user and user.canAccessKeystone %}
-			<script src="/keystone/js/content/editor.js"></script>
-		{% endif %}
-
-		{# Add scripts that are globally required by your site here. #}
 
 		{# Include template-specific javascript files by extending the js block #}
 		{% block js %}{% endblock %}
