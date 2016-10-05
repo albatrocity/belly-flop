@@ -22,12 +22,12 @@ Release.add({
     highDiveStore: { type: Types.Url, label: 'High Dive Store' },
     soundcloud: { type: Types.Url, label: 'Soundcloud' },
     bandcamp: { type: Types.Url, label: 'Bandcamp' }
-  },
-  press: { type: Types.Relationship, ref: 'Press', many: true }
+  }
 })
 
 /**
  * Registration
  */
 Release.defaultColumns = 'name, bands, releaseDate'
+Release.relationship({ path: 'press', ref: 'Press', refPath: 'releases' })
 Release.register()
