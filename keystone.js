@@ -90,9 +90,9 @@ keystone.set('compress', true)
 keystone.set('nav', {
   people: ['User', 'Contact'],
   bands: ['Band', 'Release'],
-  press: ['Press'],
+  press: ['Press', 'Publication'],
   events: ['Show'],
-  places: ['Venue', 'RecordStore', 'Publication'],
+  places: ['Venue', 'RecordStore'],
   resources: ['Resource']
 })
 
