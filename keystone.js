@@ -19,7 +19,7 @@ keystone.set('cloudinary config', {
 
 keystone.init({
   'name': 'Belly Flop',
-  'brand': 'Belly Flop',
+  'brand': 'High Dive Records',
 
   'stylus': 'public',
   'static': 'public',
@@ -32,6 +32,7 @@ keystone.init({
 
   'auto update': true,
   'session': true,
+  'session store': 'mongo',
   'auth': true,
   'user model': 'User'
 })
@@ -46,40 +47,46 @@ keystone.set('locals', {
   _: require('lodash'),
   env: keystone.get('env'),
   utils: keystone.utils,
-  editable: keystone.content.editable,
+  editable: keystone.content.editable
 })
 
 // Load your project's Routes
 keystone.set('routes', require('./routes'))
 
-// Setup common locals for your emails. The following are required by Keystone's
-// default email templates, you may remove them if you're using your own.
-keystone.set('email locals', {
-  logo_src: '/images/logo-email.gif',
-  logo_width: 194,
-  logo_height: 76,
-  theme: {
-    email_bg: '#f9f9f9',
-    link_color: '#2697de',
-    buttons: {
-      color: '#fff',
-      background_color: '#2697de',
-      border_color: '#1a7cb7',
-    },
-  },
-})
+// // Setup common locals for your emails. The following are required by Keystone's
+// // default email templates, you may remove them if you're using your own.
+// keystone.set('email locals', {
+//   logo_src: '/images/logo-email.gif',
+//   logo_width: 194,
+//   logo_height: 76,
+//   theme: {
+//     email_bg: '#f9f9f9',
+//     link_color: '#2697de',
+//     buttons: {
+//       color: '#fff',
+//       background_color: '#2697de',
+//       border_color: '#1a7cb7'
+//     }
+//   }
+// })
+
+keystone.set('google api key', process.env.GOOGLE_API_KEY)
+keystone.set('google server api key', process.env.GOOGLE_API_KEY)
+keystone.set('default region', 'us')
+keystone.set('cloudinary prefix', 'high-dive')
+keystone.set('cloudinary folders', true)
 
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'))
-
+keystone.set('compress', true)
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-  users: 'users',
-  bands: 'bands',
-  shows: 'shows',
-  venues: 'venues',
-  contacts: 'contacts'
+  people: ['User', 'Contact'],
+  bands: ['Band', 'Release'],
+  press: ['Press'],
+  events: ['Show'],
+  places: ['Venue', 'RecordStore', 'Publication']
 })
 
 // Start Keystone to connect to your database and initialise the web server
