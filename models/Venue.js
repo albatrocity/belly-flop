@@ -19,7 +19,7 @@ Venue.add(
       {label: '18+', value: '18'},
       {label: '21+', value: '21'}
     ]},
-    hasSoundSystem: { type: Types.Boolean }
+    hasSoundSystem: { type: Types.Boolean, default: true }
   }
 )
 
