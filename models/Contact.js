@@ -24,6 +24,7 @@ Contact.add({
   ]},
   phone: { type: Types.Text, index: true, initial: true },
   email: { type: Types.Email, initial: true },
+  images: { type: Types.CloudinaryImages, autoCleanup: true },
   organization: {
     type: Types.Relationship, ref: 'Organization', many: true,
     label: `Associated Places`, initial: true

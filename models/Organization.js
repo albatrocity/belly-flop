@@ -16,6 +16,7 @@ Organization.add({
   website: { type: Types.Url, initial: true },
   info: { type: Types.Textarea, initial: true },
   notes: { type: Types.Textarea, initial: true},
+  images: { type: Types.CloudinaryImages, autoCleanup: true },
   location: { type: Types.Location, initial: true },
   active: { type: Types.Boolean, default: true }
 })
