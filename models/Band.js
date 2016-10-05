@@ -25,5 +25,6 @@ Band.add({
  */
 Band.defaultColumns = 'name, members'
 Band.relationship({ path: 'shows', ref: 'Show', refPath: 'bands' })
+Band.relationship({ path: 'releases', ref: 'Release', refPath: 'bands' })
 Band.relationship({ path: 'press', ref: 'Press', refPath: 'bands' })
 Band.register()
