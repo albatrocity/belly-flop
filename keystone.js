@@ -1,6 +1,9 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').config()
+const Path = require('path')
+if (process.env.NODE_ENV != 'production') {
+  require('dotenv').load({path: Path.join(__dirname, '.env')})
+}
 
 // Require keystone
 const keystone = require('keystone')
