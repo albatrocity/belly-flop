@@ -8,6 +8,7 @@ const Types = keystone.Field.Types
 const Press = new keystone.List('Press', {
   track: true,
   defaultSort: '-publishedAt',
+  plural: 'press',
   map: { name: 'title' }
 })
 
