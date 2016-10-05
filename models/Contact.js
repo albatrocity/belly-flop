@@ -11,10 +11,11 @@ const Contact = new keystone.List('Contact', {
 
 Contact.add({
   name: { type: Types.Name },
-  type: { type: Types.Select, options: [
+  type: { type: Types.Select, initial: true, options: [
     {value: 'band_member', label: 'Band Member'},
     {value: 'promoter', label: 'Promoter'},
     {value: 'booking_agent', label: 'Booking Agent'},
+    {value: 'graphic_designer', label: 'Venue Owner'},
     {value: 'fan', label: 'Fan/Groupie'},
     {value: 'press', label: 'Press/Author'},
     {value: 'audio_engineer', label: 'Sound Person'},
