@@ -4,6 +4,7 @@ require('dotenv').config()
 
 // Require keystone
 const keystone = require('keystone')
+const mongoose = require('mongoose')
 require('nunjucks')
 const cons = require('consolidate')
 
@@ -34,7 +35,8 @@ keystone.init({
   'session': true,
   'session store': 'mongo',
   'auth': true,
-  'user model': 'User'
+  'user model': 'User',
+  'mongoose': mongoose
 })
 
 // Load your project's Models

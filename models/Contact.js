@@ -11,14 +11,6 @@ const Contact = new keystone.List('Contact', {
 
 Contact.add({
   name: { type: Types.Name },
-  phone: { type: Types.Text, index: true, initial: true },
-  email: { type: Types.Email, initial: true },
-  address: { type: Types.Location, initial:true },
-  organization: {
-    type: Types.Relationship, ref: 'Organization', many: true,
-    label: `Associated Places`, initial: true
-  },
-  notes: { type: Types.Textarea, initial: true },
   type: { type: Types.Select, options: [
     {value: 'band_member', label: 'Band Member'},
     {value: 'promoter', label: 'Promoter'},
@@ -28,7 +20,16 @@ Contact.add({
     {value: 'audio_engineer', label: 'Sound Person'},
     {value: 'graphic_designer', label: 'Graphic Designer'},
     {value: 'other', label: 'Other'}
-  ]}
+  ]},
+  phone: { type: Types.Text, index: true, initial: true },
+  email: { type: Types.Email, initial: true },
+  organization: {
+    type: Types.Relationship, ref: 'Organization', many: true,
+    label: `Associated Places`, initial: true
+  },
+  notes: { type: Types.Textarea, initial: true },
+  willHostBands: { type: Types.Boolean, initial: true },
+  address: { type: Types.Location, initial:true }
 })
 
 /**

@@ -6,6 +6,7 @@ var Types = keystone.Field.Types
  * ==========
  */
 var User = new keystone.List('User', {
+  label: 'High Divers',
   singular: 'High Diver',
   plural: 'High Divers'
 })
