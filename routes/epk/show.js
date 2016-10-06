@@ -1,6 +1,7 @@
 const keystone = require('keystone')
 const Band     = keystone.list('Band')
 const Show     = keystone.list('Show')
+const Press    = keystone.list('Press')
 const Release  = keystone.list('Release')
 
 exports = module.exports = function (req, res) {
@@ -22,6 +23,12 @@ exports = module.exports = function (req, res) {
       return Release.model.find().where({'bands': band._id}).exec()
     }).then((releases) => {
       locals.band.releases = releases
+      return locals.band
+    }).then((band) => {
+      return Press.model.where({'bands': band._id, showOnEPK: true})
+        .populate('publication').exec()
+    }).then((press) => {
+      locals.band.press = press
       return locals.band
     }).then((band) => {
       return Show.model.where({'bands': band._id})

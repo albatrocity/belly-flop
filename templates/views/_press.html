@@ -1,0 +1,10 @@
+<blockquote>
+  {{ press.highlight }}
+  {%if press.publication %}
+    <footer>
+      <a href="{{ press.url }}">
+        <cite title="Source Title">{{ press.publication.name }}</cite>
+      </a>
+    </footer>
+  {%endif%}
+</blockquote>

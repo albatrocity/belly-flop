@@ -7,22 +7,29 @@
     </div>
     <div class='row'>
       <div class="col-md-9">
-        {{ band.description.html }}
+        <div class="row">
+          <div class="col-md-11">
+            {{ band.bio }}
+          </div>
+        </div>
+        <div class="row">
+          {% for press in band.press %}
+            {% include "_press.html" %}
+          {% endfor %}
+        </div>
       </div>
-      <div class='col-md-3'>
+      <div class='col-md-3 col-xs-12'>
         <div class='row'>
-          <div class='col'>
+          <div class='col col-s-6 col-md-12'>
         		<h3>Releases</h3>
             {% for release in band.releases %}
               {% include "_release.html" %}
             {% endfor %}
           </div>
-        </div>
-        <div class='row'>
-          <div class='col'>
-        		<h3>Upcoming Shows</h3>
+          <div class='col col-s-6 col-md-12'>
+            <h3>Upcoming Shows</h3>
             {% for show in band.upcoming_shows %}
-              {% include "_show.html" %}
+            {% include "_show.html" %}
             {% endfor %}
           </div>
         </div>
