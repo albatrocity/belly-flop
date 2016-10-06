@@ -16,7 +16,7 @@ Show.add({
   venue: { type: Types.Relationship, ref: 'Organization', index: true, initial: true, required: true },
   bands: { type: Types.Relationship, ref: 'Band', many: true, label: 'High Dive Band(s)', initial: true },
   eventPage: { type: Types.Url, initial: true },
-  images: { type: Types.CloudinaryImages, autoCleanup: true },
+  images: { type: Types.CloudinaryImages, autoCleanup: true, folder: 'shows' },
   info: { type: Types.Textarea, initial: true, note: `cover, other bands, etc.` },
   notes: { type: Types.Textarea, initial: true, note: `how'd you set this up, etc.` }
 })

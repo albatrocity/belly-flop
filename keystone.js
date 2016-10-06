@@ -79,8 +79,8 @@ keystone.set('routes', require('./routes'))
 keystone.set('google api key', process.env.GOOGLE_API_KEY)
 keystone.set('google server api key', process.env.GOOGLE_API_KEY)
 keystone.set('default region', 'us')
-keystone.set('cloudinary prefix', 'high-dive')
 keystone.set('cloudinary folders', true)
+keystone.set('cloudinary prefix', 'high-dive')
 
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'))

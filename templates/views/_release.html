@@ -1,0 +1,5 @@
+<h4>{{ release.name }}</h4>
+<cite>{{ release._.releaseDate.format('MMMM D YYYY') }}</cite>
+{% if release.art %}
+  {{ release.art }}
+{% endif %}

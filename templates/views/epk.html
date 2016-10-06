@@ -1,0 +1,28 @@
+{% extends "default.html" %}
+
+{% block content %}
+	<div class='container'>
+    <div class="page-header">
+      <h1>{{ band.name }}</h1>
+    </div>
+    <div class='row'>
+      <div class="col-md-9">
+        {{ band.description.html }}
+      </div>
+      <div class='col-md-3'>
+        <div class='row'>
+      		<h3>Releases</h3>
+          {% for release in band.releases %}
+            {% include "_release.html" %}
+          {% endfor %}
+        </div>
+        <div class='row'>
+      		<h3>Upcoming Shows</h3>
+          {% for show in band.upcoming_shows %}
+            {% include "_show.html" %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+	</div>
+{% endblock %}

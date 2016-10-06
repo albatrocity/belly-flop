@@ -15,7 +15,7 @@ Band.add({
   name: { type: Types.Text, required: true, index: true },
   bio: { type: Types.Html, wysiwyg: true, initial: true },
   members: { type: Types.Relationship, ref: 'User', many: true, initial: true },
-  photos: { type: Types.CloudinaryImages, autoCleanup : true, select : true },
+  photos: { type: Types.CloudinaryImages, autoCleanup : true, select : true, folder: 'bands' },
   booking_email: { type: Types.Email, initial: true, label: 'Booking Email' },
   press_email: { type: Types.Email, initial: true, label: 'Press Email' }
 })
