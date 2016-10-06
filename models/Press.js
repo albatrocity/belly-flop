@@ -8,8 +8,7 @@ const Types = keystone.Field.Types
 const Press = new keystone.List('Press', {
   track: true,
   defaultSort: '-publishedAt',
-  plural: 'press',
-  map: { name: 'title' }
+  plural: 'press'
 })
 
 Press.add({
@@ -20,11 +19,12 @@ Press.add({
   publishedAt: { type: Types.Date, default: Date.now(), initial: true },
   url: { type: Types.Url, required: true, initial: true },
   highlight: { type: Types.Html, wysiwyg: true, note: 'quote or snippet from the writeup', initial: true },
-  contacts: { type: Types.Relationship, ref: 'Contact', many: true, initial: true }
+  contacts: { type: Types.Relationship, ref: 'Contact', many: true, initial: true },
+  showOnEPK: { type: Types.Boolean, default: true }
 })
 
 /**
  * Registration
  */
-Press.defaultColumns = 'name, bands, releases, publishedAt'
+Press.defaultColumns = 'title, bands, releases, publication, publishedAt'
 Press.register()
