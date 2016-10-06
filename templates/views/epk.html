@@ -11,16 +11,20 @@
       </div>
       <div class='col-md-3'>
         <div class='row'>
-      		<h3>Releases</h3>
-          {% for release in band.releases %}
-            {% include "_release.html" %}
-          {% endfor %}
+          <div class='col'>
+        		<h3>Releases</h3>
+            {% for release in band.releases %}
+              {% include "_release.html" %}
+            {% endfor %}
+          </div>
         </div>
         <div class='row'>
-      		<h3>Upcoming Shows</h3>
-          {% for show in band.upcoming_shows %}
-            {% include "_show.html" %}
-          {% endfor %}
+          <div class='col'>
+        		<h3>Upcoming Shows</h3>
+            {% for show in band.upcoming_shows %}
+              {% include "_show.html" %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
