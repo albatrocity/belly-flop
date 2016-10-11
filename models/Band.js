@@ -22,7 +22,7 @@ Band.add({
 }, 'Media', {
   audioPlayerEmbed: {
     type: Types.Code, language: 'html', label: 'Audio Player Embed Code',
-    note: 'Soundcloud, Bandcamp, etc. Usually an iframe', height: 10
+    note: 'Soundcloud, Bandcamp, etc. Usually an iframe', height: 80
   },
   photos: { type: Types.CloudinaryImages, autoCleanup : true, select : true, folder: 'bands' }
 }, 'Contact', {
