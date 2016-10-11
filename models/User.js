@@ -33,7 +33,7 @@ User.add({heading: 'Info'}, {
     type: Types.Relationship, ref: 'Band', many: true,
     label: `Bands`, initial: true
   },
-  images: { type: Types.CloudinaryImages, autoCleanup: true, folder: 'contacts' },
+  images: { type: Types.CloudinaryImages, autoCleanup: true, folder: 'users' },
   notes: { type: Types.Textarea, initial: true }
 }, 'Contact', {
   phone: { type: Types.Text, initial: true },
@@ -63,7 +63,6 @@ User.schema.virtual('canAccessKeystone').get(function () {
  * Registration
  */
 User.defaultColumns = 'name, email, isAdmin'
-User.relationship({ path: 'bands', ref: 'Band', refPath: 'members' })
 User.register()
 
 exports = module.exports = User

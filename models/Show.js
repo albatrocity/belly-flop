@@ -14,7 +14,7 @@ Show.add({
   title: { type: Types.Text, initial: true, note: 'optional' },
   date: { type: Types.Datetime, required: true, initial: true, format: 'Do MMM YYYY hh:mm a' },
   venue: { type: Types.Relationship, ref: 'Organization', index: true, initial: true, required: true },
-  bands: { type: Types.Relationship, ref: 'Band', many: true, label: 'High Dive Band(s)', initial: true },
+  bands: { type: Types.Relationship, ref: 'Band', many: true, label: 'Bands', initial: true },
   eventPage: { type: Types.Url, initial: true },
   images: { type: Types.CloudinaryImages, autoCleanup: true, folder: 'shows' },
   info: { type: Types.Textarea, initial: true, note: `cover, other bands, etc.` },
