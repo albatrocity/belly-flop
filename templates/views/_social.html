@@ -1,0 +1,26 @@
+<ul class='band-links'>
+{% if band.website %}
+  <li><a href='{{band.website}}'>{{band.website}}</a></li>
+{% endif %}
+
+{% if band.social.facebook %}
+  <li><a href='{{band.social.facebook}}'>Facebook</a></li>
+{% endif %}
+
+{% if band.social.twitter %}
+  <li><a href='{{band.social.twitterUrl}}'>Twitter - {{band.social.twitter}}</a></li>
+{% endif %}
+
+{% if band.social.instagram %}
+  <li><a href='{{band.social.instagramUrl}}'>Instagram - {{band.social.instagram}}</a></li>
+{% endif %}
+
+{% if band.social.bandcamp %}
+  <li><a href='{{band.social.bandcamp}}'>Bandcamp</a></li>
+{% endif %}
+
+{% if band.social.soundcloud %}
+  <li><a href='{{band.social.soundcloud}}'>Soundcloud</a></li>
+{% endif %}
+
+</ul>

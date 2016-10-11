@@ -1,4 +1,13 @@
 {% extends "default.html" %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.css" media="screen" title="no title" />
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="/js/photoswipe/init.js"></script>
+{% endblock %}
+
 
 {% block content %}
 	<div class='container'>
@@ -6,9 +15,17 @@
       <h1>{{ band.name }}</h1>
     </div>
     <div class='row'>
-      <div class="col-md-9">
+      <div class="col-md-9" itemscope itemtype="http://schema.org/ImageGallery">
+        {% include "_band_gallery.html" %}
+
         <div class="row">
-          <div class="col-md-11">
+          <div class="col-md-12">
+            {% if band.audioPlayerEmbed %}
+              {{ band.audioPlayerEmbed }}
+            {% endif %}
+            <hr />
+          </div>
+          <div class="col-md-12">
             {{ band.bio }}
           </div>
         </div>
@@ -31,9 +48,16 @@
             {% for show in band.upcoming_shows %}
             {% include "_show.html" %}
             {% endfor %}
+            <hr />
+            {% include '_social.html' %}
+            <hr />
+            <a href='http://highdivekc.com'>
+              <img class='img-responsive' src='images/highdiverecords_logo.svg' alt='High Dive Records' />
+            </a>
           </div>
         </div>
       </div>
     </div>
 	</div>
+  {% include "_pswp.html" %}
 {% endblock %}

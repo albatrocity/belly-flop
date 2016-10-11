@@ -1,0 +1,27 @@
+<div class="pswp-gallery">
+  {% if band.photos.length %}
+    <!-- FIRST PHOTO -->
+    <div class="row gallery-main">
+      {% for photo in band.photos %}{% if loop.first %}
+        <figure class="gallery-thumb col-md-12" itemprop="bandPhotos" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{photo.fit(1600,800)}}" itemprop="contentUrl" data-size="{{photo.width}}x{{photo.height}}">
+            <img class="img-responsive" src="{{ photo.fit(1000,600) }}" itemprop="thumbnail" alt="{{ band.name }}" />
+          </a>
+        </figure>
+      {% endif %}{% endfor %}
+    </div>
+    <!-- OTHER PHOTOS -->
+    {% if band.photos.length > 1 %}
+      <div class="row gallery-thumbnails">
+        {% for photo in band.photos %}
+        {% if loop.index > 1 %}
+          <figure class="gallery-thumb col-md-{{12/(loop.length-1)}}" itemprop="bandPhotos" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{photo.fit(1600,800)}}" itemprop="contentUrl" data-size="{{photo.width}}x{{photo.height}}">
+              <img class="img-responsive img-thumbnail" src="{{ photo.fit(500,400) }}" itemprop="thumbnail" alt="{{ band.name }}" />
+            </a>
+          </figure>
+        {% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  {% endif %}
+</div>

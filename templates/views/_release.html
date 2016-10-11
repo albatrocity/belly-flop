@@ -1,5 +1,7 @@
-<h4>{{ release.name }}</h4>
-<cite>{{ release._.releaseDate.format('MMMM D YYYY') }}</cite>
+<h4>
+  {{ release.name }}
+  <small><cite>{{ release._.releaseDate.format('MMMM D YYYY') }}</cite></small>
+</h4>
 {% if release.art.exists %}
   <a href="{% if release.links.highDive %}{{ release.links.highDive }}{% else %}http://highdivekc.com{%endif%}">
     <img class="img-responsive" src="{{ release._.art.fit('500') }}" />
