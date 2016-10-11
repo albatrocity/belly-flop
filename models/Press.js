@@ -13,13 +13,13 @@ const Press = new keystone.List('Press', {
 
 Press.add({
   title: { type: Types.Text, index: true, initial: true, note: 'article title, if one' },
-  bands: { type: Types.Relationship, ref: 'Band', many: true, initial: true, note: 'High Dive bands included' },
+  bands: { type: Types.Relationship, ref: 'Band', many: true, initial: true, note: 'High Dive bands included', filter: { highDive: true } },
   releases: { type: Types.Relationship, ref: 'Release', many: true, initial: true, note: 'High Dive Releases included' },
   publication: { type: Types.Relationship, ref: 'Publication', initial: true},
   publishedAt: { type: Types.Date, default: Date.now(), initial: true },
   url: { type: Types.Url, required: true, initial: true },
   highlight: { type: Types.Html, wysiwyg: true, note: 'quote or snippet from the writeup', initial: true },
-  contacts: { type: Types.Relationship, ref: 'Contact', many: true, initial: true },
+  contacts: { type: Types.Relationship, ref: 'User', many: true, initial: true },
   showOnEPK: { type: Types.Boolean, default: true }
 })
 

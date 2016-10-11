@@ -14,7 +14,7 @@ const Release = new keystone.List('Release', {
 Release.add({
   name: { type: Types.Text, required: true, index: true, initial: true },
   slug: { type: Types.Text, index: true },
-  bands: { type: Types.Relationship, ref: 'Band', many: true, initial: true, required: true },
+  bands: { type: Types.Relationship, ref: 'Band', many: true, initial: true, required: true, filter: { highDive: true } },
   releaseDate: { type: Types.Date, initial: true, required: true },
   art: { type: Types.CloudinaryImage, autoCleanup: true, select: true, initial: true, folder: 'releases' },
   description: { type: Types.Html, wysiwyg: true, initial: true },

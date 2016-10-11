@@ -88,7 +88,7 @@ keystone.set('compress', true)
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-  people: ['User', 'Contact'],
+  people: 'User',
   bands: ['Band', 'Release'],
   press: ['Press', 'Publication'],
   events: ['Show'],

@@ -28,5 +28,5 @@ Venue.add(
  */
 Venue.defaultColumns = 'name, location'
 Venue.relationship({ path: 'shows', ref: 'Show', refPath: 'venue' })
-Venue.relationship({ path: 'contacts', ref: 'Contact', refPath: 'organization' })
+Venue.relationship({ path: 'contacts', ref: 'User', refPath: 'organizations' })
 Venue.register()

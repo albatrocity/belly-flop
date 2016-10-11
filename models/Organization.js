@@ -26,5 +26,5 @@ Organization.add({
  */
 Organization.defaultColumns = 'name, location, info'
 Organization.relationship({ path: 'shows', ref: 'Show', refPath: 'venue' })
-Organization.relationship({ path: 'contacts', ref: 'Contact', refPath: 'organization' })
+Organization.relationship({ path: 'contacts', ref: 'User', refPath: 'organizations' })
 Organization.register()

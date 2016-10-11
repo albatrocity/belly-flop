@@ -8,13 +8,14 @@ const Types = keystone.Field.Types
 const Band = new keystone.List('Band', {
   track: true,
   autokey: { path: 'slug', from: 'name', unique: true },
-  defaultSort: 'name'
+  defaultSort: '-highDive, name'
 })
 
 Band.add({
   name: { type: Types.Text, required: true, index: true },
+  highDive: { type: Types.Boolean, index: true, label: 'High Dive Roster', default: true },
+  active: { type: Types.Boolean, index: true, default: true },
   bio: { type: Types.Html, wysiwyg: true, initial: true },
-  members: { type: Types.Relationship, ref: 'User', many: true, initial: true },
   photos: { type: Types.CloudinaryImages, autoCleanup : true, select : true, folder: 'bands' },
   booking_email: { type: Types.Email, initial: true, label: 'Booking Email' },
   press_email: { type: Types.Email, initial: true, label: 'Press Email' }
@@ -23,8 +24,9 @@ Band.add({
 /**
  * Registration
  */
-Band.defaultColumns = 'name, members'
+Band.defaultColumns = 'name, highDive, active'
 Band.relationship({ path: 'shows', ref: 'Show', refPath: 'bands' })
+Band.relationship({ path: 'members', ref: 'User', refPath: 'bands' })
 Band.relationship({ path: 'releases', ref: 'Release', refPath: 'bands' })
 Band.relationship({ path: 'press', ref: 'Press', refPath: 'bands' })
 Band.register()

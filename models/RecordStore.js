@@ -16,5 +16,5 @@ RecordStore.add(
  */
 RecordStore.defaultColumns = 'name, location'
 RecordStore.relationship({ path: 'shows', ref: 'Show', refPath: 'venue' })
-RecordStore.relationship({ path: 'contacts', ref: 'Contact', refPath: 'organization' })
+RecordStore.relationship({ path: 'contacts', ref: 'User', refPath: 'organizations' })
 RecordStore.register()
