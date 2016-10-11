@@ -13,8 +13,8 @@ const Band = new keystone.List('Band', {
 
 Band.add({
   name: { type: Types.Text, required: true, index: true },
-  highDive: { type: Types.Boolean, index: true, label: 'High Dive Roster', default: true },
-  active: { type: Types.Boolean, index: true, default: true },
+  highDive: { type: Types.Boolean, index: true, label: 'High Dive Roster', default: false, initial: true },
+  active: { type: Types.Boolean, index: true, default: true, initial: true },
   bio: { type: Types.Html, wysiwyg: true, initial: true },
   notes: { type: Types.Textarea, wysiwyg: true, initial: true },
   photos: { type: Types.CloudinaryImages, autoCleanup : true, select : true, folder: 'bands' }
@@ -22,7 +22,7 @@ Band.add({
   website: { type: Types.Url, initial: true },
   booking_email: { type: Types.Email, initial: true, label: 'Booking Email' },
   press_email: { type: Types.Email, initial: true, label: 'Press Email' },
-  location: { type: Types.Location }
+  location: { type: Types.Location, initial: true }
 })
 
 /**
