@@ -45,9 +45,13 @@
           </div>
           <div class='col col-s-6 col-md-12'>
             <h3>Upcoming Shows</h3>
-            {% for show in band.upcoming_shows %}
-            {% include "_show.html" %}
-            {% endfor %}
+            {% if band.upcoming_shows.length > 0 %}
+              <h4>No upcoming shows at this time</h4>
+            {% else %}
+              {% for show in band.upcoming_shows %}
+                {% include "_show.html" %}
+              {% endfor %}
+            {% endif %}
             <hr />
             {% include '_social.html' %}
             <hr />
