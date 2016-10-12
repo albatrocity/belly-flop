@@ -92,7 +92,7 @@ keystone.set('nav', {
   bands: ['Band', 'Release'],
   press: ['Press', 'Publication'],
   events: ['Show'],
-  places: ['Venue', 'RecordStore'],
+  places: ['Venue', 'RecordStore', 'RadioStation'],
   resources: ['Resource']
 })
 
