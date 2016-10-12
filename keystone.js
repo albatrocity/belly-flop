@@ -39,7 +39,8 @@ keystone.init({
   'session store': 'mongo',
   'auth': true,
   'user model': 'User',
-  'mongoose': mongoose
+  'mongoose': mongoose,
+  'compress': true
 })
 
 // Load your project's Models
@@ -84,7 +85,6 @@ keystone.set('cloudinary prefix', 'high-dive')
 
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'))
-keystone.set('compress', true)
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {

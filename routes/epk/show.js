@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 
   view.on('init', (next) => {
     return Band.model.findOne({
-      slug: req.params.band, highDive: true
+      slug: req.params.band.replace('.ics', ''), highDive: true
     }).then((band) => {
       // if (!band) { res.notfound() }
       if (!band) { next() }
