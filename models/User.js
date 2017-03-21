@@ -18,6 +18,7 @@ User.add({heading: 'Info'}, {
     {value: 'band_member', label: 'Band Member'},
     {value: 'promoter', label: 'Promoter'},
     {value: 'booking_agent', label: 'Booking Agent'},
+    {value: 'talent_buyer', label: 'Talent Buyer'},
     {value: 'graphic_designer', label: 'Venue Owner'},
     {value: 'fan', label: 'Fan/Groupie'},
     {value: 'press', label: 'Press/Author'},
